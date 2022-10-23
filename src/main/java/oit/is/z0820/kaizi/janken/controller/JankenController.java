@@ -15,10 +15,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class JankenController {
 
+
   /**
    * sample21というGETリクエストがあったら sample21()を呼び出し，sample21.htmlを返す
    */
 
+
+=======
+  @GetMapping("/sample1")
+  public String sample1() {
+    return "index.html";
+  }
+
+  /**
+   * sample21というGETリクエストがあったら sample21()を呼び出し，sample21.htmlを返す
+   */
 
   @GetMapping("/sample21")
   public String sample21() {
@@ -30,10 +41,13 @@ public class JankenController {
     return "sample24.html";
   }
 
+
   @GetMapping("/janken")
   public String janken() {
     return "janken.html";
   }
+=======
+
 
   /**
    * パスパラメータ2つをGETで受け付ける 1つ目の変数をparam1という名前で，2つ目の変数をparam2という名前で受け取る
@@ -94,11 +108,13 @@ public class JankenController {
     return "sample24.html";
   }
 
+
   @PostMapping("/janken")
   public String nyusitu(@RequestParam String uname, ModelMap model) {
     String unameResult = uname;
     model.addAttribute("unameResult", unameResult);
     return "janken.html";
   }
+
 
 }
